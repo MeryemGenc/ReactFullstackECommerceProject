@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { get } from 'mongoose'
+// import { get } from 'mongoose'
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartCanstants'
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
