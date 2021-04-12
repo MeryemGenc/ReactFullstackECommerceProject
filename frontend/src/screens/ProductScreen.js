@@ -13,6 +13,7 @@ import {
 } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import { listProductDetails } from '../actions/productActions'
+import { addToCart } from '../actions/cartActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 
@@ -28,7 +29,8 @@ const ProductScreen = ({ history, match }) => {
   }, [dispatch, match])
 
   const addToCartHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${qty}`)
+    dispatch(addToCart(product._id, qty))
+    history.push('/cart')
   }
 
   return (
